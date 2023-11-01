@@ -13,10 +13,16 @@ const ToDoList = (props: any) => {
         </div>
         <div className="flex items-center">
           <a href="">
-            <LiaEditSolid className="text-white text-base md:text-xl" />
+            <LiaEditSolid
+              className="text-white text-base md:text-xl"
+              onClick={props.updateToDo}
+            />
           </a>
           <a href="">
-            <LiaTrashAltSolid className="text-white text-base md:text-xl" />
+            <LiaTrashAltSolid
+              className="text-white text-base md:text-xl"
+              onClick={props.updateToDo}
+            />
           </a>
         </div>
       </div>
