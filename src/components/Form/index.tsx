@@ -12,21 +12,21 @@ const Form = () => {
     <form className="mb-8 w-full">
       <div className="flex flex-col justify-center items-center gap-4">
         <label className="text-white text-xs md:text-base justify-self-start w-3/4">
-          Task
+          Tarefas
         </label>
         <input
           type="text"
-          placeholder="What is the task today?"
+          placeholder="Descreve a tarefa..."
           className="text-white flex bg-transparent border border-purple-500 p-2 w-3/4"
           value={description}
           onChange={(e: any) => setDescription(e.target.value)}
         />
         <label className="text-white text-xs md:text-base justify-self-start w-3/4">
-          Priority
+          Prioridade
         </label>
         <input
           type="text"
-          placeholder="What is the importance?"
+          placeholder="Qual a prioridade dela?"
           className="text-white flex bg-transparent border border-purple-500 p-2 w-3/4"
           value={priority}
           onChange={(e: any) => setPriority(e.target.value)}
@@ -56,7 +56,7 @@ const Form = () => {
                   )
           }
         >
-          {isUpdating ? 'Update' : 'Add Task'}
+          {isUpdating ? 'Atualizar' : 'Adicionar'}
         </button>
       </div>
     </form>
