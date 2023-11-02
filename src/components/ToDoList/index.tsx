@@ -21,7 +21,7 @@ const ToDoList = (props: any) => {
           <a href="">
             <LiaTrashAltSolid
               className="text-white text-base md:text-xl"
-              onClick={props.updateToDo}
+              onClick={props.deleteToDo}
             />
           </a>
         </div>

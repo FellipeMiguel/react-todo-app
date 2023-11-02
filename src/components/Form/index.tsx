@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { addToDo } from '../../utils/ApiHandler';
+import { addToDo, updateToDo } from '../../utils/ApiHandler';
 
 const Form = () => {
   const [toDo, setToDo]: any = useState([]);
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('');
+  const [isUpdating, setIsUpdating]: any = useState(false);
+  const [toDoId, setToDoId] = useState('');
 
   return (
     <form className="mb-8 w-full">
@@ -32,11 +34,29 @@ const Form = () => {
         <button
           type="submit"
           className="bg-purple-500 text-white text-xs md:text-base rounded p-2 md:p-3 lg:p-4"
-          onClick={() =>
-            addToDo(description, setDescription, priority, setPriority, setToDo)
+          onClick={
+            isUpdating
+              ? () =>
+                  updateToDo(
+                    toDoId,
+                    description,
+                    setDescription,
+                    priority,
+                    setPriority,
+                    setToDo,
+                    setIsUpdating,
+                  )
+              : () =>
+                  addToDo(
+                    description,
+                    setDescription,
+                    priority,
+                    setPriority,
+                    setToDo,
+                  )
           }
         >
-          Add Task
+          {isUpdating ? 'Update' : 'Add Task'}
         </button>
       </div>
     </form>
